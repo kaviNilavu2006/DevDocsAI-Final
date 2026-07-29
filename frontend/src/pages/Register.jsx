@@ -36,13 +36,19 @@ function Register() {
 
             if (response.ok) {
                 alert("Registration Successful!");
-                navigate("/");
+                navigate("/login");
             } else {
-                const error = await response.text();
-                alert(error);
+                let errorMsg = "Registration failed";
+                try {
+                    const data = await response.json();
+                    errorMsg = data.message || data.error || errorMsg;
+                } catch (e) {
+                    errorMsg = await response.text();
+                }
+                alert(errorMsg);
             }
         } catch (err) {
-            alert("No response from backend");
+            alert("Connection error. Please try again.");
             console.error(err);
         }
     };

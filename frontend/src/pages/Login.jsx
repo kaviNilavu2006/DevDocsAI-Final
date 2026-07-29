@@ -42,12 +42,18 @@ function Login() {
                 alert("Login Successful!");
                 navigate("/dashboard");
             } else {
-                const error = await response.text();
-                alert(error);
+                let errorMsg = "Login failed";
+                try {
+                    const data = await response.json();
+                    errorMsg = data.message || data.error || errorMsg;
+                } catch (e) {
+                    errorMsg = await response.text();
+                }
+                alert(errorMsg);
             }
         } catch (err) {
             console.error(err);
-            alert("No response from backend");
+            alert("Connection error. Please try again.");
         }
     };
 
