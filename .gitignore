@@ -1,0 +1,9 @@
+node_modules/
+.idea/
+uploads/
+*.zip
+
+backend/target/
+frontend/dist/
+
+.env
