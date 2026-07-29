@@ -59,8 +59,8 @@ public class OpenRouterService {
 
                     ),
 
-                    // Prevent huge responses
-                    "max_tokens", 500
+                    // Allow sufficient tokens for quizzes and notes
+                    "max_tokens", 2000
 
             );
 

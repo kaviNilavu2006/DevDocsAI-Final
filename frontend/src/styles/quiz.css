@@ -1,0 +1,207 @@
+body{
+    background:#0F172A;
+    color:#F8FAFC;
+    font-family:Inter,Arial,sans-serif;
+}
+
+/* ============================= */
+/* Quiz Container */
+/* ============================= */
+
+.quiz-container{
+
+    max-width:900px;
+
+    margin:40px auto;
+
+    background:#1E293B;
+
+    padding:35px;
+
+    border-radius:20px;
+
+    box-shadow:0 15px 40px rgba(0,0,0,.30);
+
+}
+
+.quiz-container h2{
+
+    text-align:center;
+
+    margin-bottom:30px;
+
+    font-weight:700;
+
+}
+
+/* ============================= */
+/* Progress */
+/* ============================= */
+
+.progress{
+
+    background:#334155;
+
+    color:#F8FAFC;
+
+    padding:12px;
+
+    border-radius:10px;
+
+    text-align:center;
+
+    margin-bottom:25px;
+
+    font-weight:600;
+
+}
+
+/* ============================= */
+/* Question Card */
+/* ============================= */
+
+.quiz-card{
+
+    background:#0F172A;
+
+    padding:30px;
+
+    border-radius:15px;
+
+    margin-bottom:30px;
+
+}
+
+.quiz-card h4{
+
+    margin-bottom:30px;
+
+    font-size:24px;
+
+    font-weight:600;
+
+    line-height:1.6;
+
+}
+
+/* ============================= */
+/* Options */
+/* ============================= */
+
+.option{
+
+    width:100%;
+
+    text-align:left;
+
+    margin-bottom:15px;
+
+    padding:15px 20px;
+
+    border:none;
+
+    border-radius:12px;
+
+    background:#334155;
+
+    color:white;
+
+    font-size:16px;
+
+    transition:.3s;
+
+}
+
+.option:hover{
+
+    background:#2563EB;
+
+    transform:translateX(5px);
+
+}
+
+.option.selected{
+
+    background:#22C55E;
+
+    color:white;
+
+    font-weight:bold;
+
+}
+
+/* ============================= */
+/* Buttons */
+/* ============================= */
+
+.quiz-buttons{
+
+    display:flex;
+
+    justify-content:space-between;
+
+}
+
+.quiz-buttons .btn{
+
+    min-width:150px;
+
+    border-radius:12px;
+
+}
+
+/* ============================= */
+/* Result */
+/* ============================= */
+
+.quiz-result{
+
+    max-width:650px;
+
+    margin:60px auto;
+
+    text-align:center;
+
+    background:#1E293B;
+
+    padding:50px;
+
+    border-radius:20px;
+
+    box-shadow:0 15px 40px rgba(0,0,0,.30);
+
+}
+
+.quiz-result h1{
+
+    margin-bottom:25px;
+
+}
+
+.score-circle{
+
+    width:180px;
+
+    height:180px;
+
+    margin:30px auto;
+
+    border-radius:50%;
+
+    background:#2563EB;
+
+    display:flex;
+
+    justify-content:center;
+
+    align-items:center;
+
+    font-size:42px;
+
+    font-weight:bold;
+
+    color:white;
+
+    box-shadow:0 10px 30px rgba(37,99,235,.40);
+
+}

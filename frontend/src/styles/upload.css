@@ -1,0 +1,179 @@
+.upload-page{
+
+    padding:40px;
+
+    display:flex;
+
+    flex-direction:column;
+
+    align-items:center;
+
+}
+
+.upload-title{
+
+    color:white;
+
+    font-size:36px;
+
+    font-weight:700;
+
+    margin-bottom:10px;
+
+}
+
+.upload-subtitle{
+
+    color:#94A3B8;
+
+    margin-bottom:40px;
+
+    text-align:center;
+
+    max-width:700px;
+
+}
+
+.upload-card{
+
+    width:100%;
+
+    max-width:700px;
+
+    background:#1E293B;
+
+    border-radius:25px;
+
+    padding:50px;
+
+    text-align:center;
+
+    border:2px dashed #2563EB;
+
+    box-shadow:0 15px 40px rgba(0,0,0,.30);
+
+    transition:.35s;
+
+}
+
+.upload-card:hover{
+
+    transform:translateY(-8px);
+
+    box-shadow:0 20px 45px rgba(37,99,235,.35);
+
+}
+
+.upload-icon{
+
+    font-size:80px;
+
+    margin-bottom:20px;
+
+}
+
+.upload-card h3{
+
+    color:white;
+
+    font-weight:700;
+
+    margin-bottom:10px;
+
+}
+
+.upload-card p{
+
+    color:#94A3B8;
+
+    margin-bottom:25px;
+
+}
+
+.upload-card input{
+
+    width:100%;
+
+    padding:14px;
+
+    border-radius:12px;
+
+    border:1px solid #334155;
+
+    background:#0F172A;
+
+    color:white;
+
+    margin-bottom:20px;
+
+}
+
+.selected-file{
+
+    background:#0F172A;
+
+    color:#22C55E;
+
+    padding:12px;
+
+    border-radius:12px;
+
+    margin-bottom:20px;
+
+    font-weight:600;
+
+}
+
+.upload-btn{
+
+    width:100%;
+
+    padding:15px;
+
+    border:none;
+
+    border-radius:12px;
+
+    background:#2563EB;
+
+    color:white;
+
+    font-size:17px;
+
+    font-weight:600;
+
+    transition:.3s;
+
+}
+
+.upload-btn:hover{
+
+    background:#1D4ED8;
+
+    transform:translateY(-3px);
+
+}
+
+.upload-btn:disabled{
+
+    background:#64748B;
+
+    cursor:not-allowed;
+
+}
+
+@media(max-width:768px){
+
+    .upload-card{
+
+        padding:30px;
+
+    }
+
+    .upload-title{
+
+        font-size:30px;
+
+    }
+
+}

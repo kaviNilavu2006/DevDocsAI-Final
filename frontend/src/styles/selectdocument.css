@@ -1,0 +1,93 @@
+.select-page{
+
+    padding:30px;
+
+}
+
+.select-title{
+
+    color:white;
+
+    font-size:34px;
+
+    font-weight:700;
+
+}
+
+.select-subtitle{
+
+    color:#94A3B8;
+
+    margin-bottom:35px;
+
+}
+
+.select-card{
+
+    background:#1E293B;
+
+    border-radius:20px;
+
+    padding:30px;
+
+    text-align:center;
+
+    color:white;
+
+    transition:.35s;
+
+    box-shadow:0 15px 35px rgba(0,0,0,.25);
+
+    border:1px solid rgba(255,255,255,.05);
+
+}
+
+.select-card:hover{
+
+    transform:translateY(-8px);
+
+    box-shadow:0 20px 40px rgba(37,99,235,.35);
+
+}
+
+.pdf-icon{
+
+    font-size:60px;
+
+    margin-bottom:20px;
+
+}
+
+.select-card h4{
+
+    font-weight:700;
+
+    margin-bottom:10px;
+
+}
+
+.select-card p{
+
+    color:#94A3B8;
+
+}
+
+.select-card button{
+
+    width:100%;
+
+    border-radius:12px;
+
+    padding:12px;
+
+}
+
+.loading-card{
+
+    text-align:center;
+
+    color:white;
+
+    padding:100px;
+
+}

@@ -1,0 +1,289 @@
+/* ===========================
+   Documents Page
+=========================== */
+
+.page-title{
+
+    font-size:38px;
+
+    font-weight:700;
+
+    color:#F8FAFC;
+
+}
+
+.page-subtitle{
+
+    color:#94A3B8;
+
+    margin-top:8px;
+
+    margin-bottom:30px;
+
+    font-size:16px;
+
+}
+
+/* ===========================
+   Search Box
+=========================== */
+
+.search-container{
+
+    margin-bottom:35px;
+
+}
+
+.search-box{
+
+    width:100%;
+
+    padding:16px 20px;
+
+    border:none;
+
+    border-radius:15px;
+
+    outline:none;
+
+    background:#1E293B;
+
+    color:white;
+
+    font-size:16px;
+
+    border:1px solid rgba(255,255,255,.08);
+
+    transition:.3s;
+
+}
+
+.search-box::placeholder{
+
+    color:#94A3B8;
+
+}
+
+.search-box:focus{
+
+    border:1px solid #2563EB;
+
+    box-shadow:0 0 15px rgba(37,99,235,.25);
+
+}
+
+/* ===========================
+   Document Card
+=========================== */
+
+.document-card{
+
+    background:linear-gradient(145deg,#1E293B,#162033);
+
+    border-radius:22px;
+
+    padding:28px;
+
+    color:white;
+
+    height:100%;
+
+    border:1px solid rgba(255,255,255,.05);
+
+    transition:.35s;
+
+    box-shadow:0 12px 28px rgba(0,0,0,.25);
+
+}
+
+.document-card:hover{
+
+    transform:translateY(-8px);
+
+    box-shadow:0 20px 40px rgba(37,99,235,.30);
+
+}
+
+/* ===========================
+   Icon
+=========================== */
+
+.document-icon{
+
+    font-size:60px;
+
+    margin-bottom:20px;
+
+}
+
+/* ===========================
+   Title
+=========================== */
+
+.document-title{
+
+    font-size:22px;
+
+    font-weight:700;
+
+    margin-bottom:10px;
+
+    word-break:break-word;
+
+}
+
+/* ===========================
+   Info
+=========================== */
+
+.document-info{
+
+    color:#CBD5E1;
+
+    margin-bottom:10px;
+
+}
+
+.document-size{
+
+    color:#94A3B8;
+
+    margin-bottom:25px;
+
+}
+
+/* ===========================
+   Buttons
+=========================== */
+
+.action-buttons{
+
+    display:flex;
+
+    flex-wrap:wrap;
+
+    gap:10px;
+
+}
+
+.action-buttons .btn{
+
+    border-radius:10px;
+
+    font-size:14px;
+
+    padding:8px 14px;
+
+    font-weight:600;
+
+    transition:.25s;
+
+}
+
+.action-buttons .btn:hover{
+
+    transform:scale(1.05);
+
+}
+
+/* ===========================
+   Empty Card
+=========================== */
+
+.empty-card{
+
+    background:#1E293B;
+
+    border-radius:20px;
+
+    padding:70px;
+
+    text-align:center;
+
+    color:white;
+
+    border:1px solid rgba(255,255,255,.05);
+
+}
+
+.empty-card h1{
+
+    font-size:90px;
+
+}
+
+.empty-card h3{
+
+    margin-top:20px;
+
+}
+
+.empty-card p{
+
+    color:#94A3B8;
+
+    margin:20px 0;
+
+}
+
+/* ===========================
+   Loading
+=========================== */
+
+.documents-loading{
+
+    height:70vh;
+
+    display:flex;
+
+    justify-content:center;
+
+    align-items:center;
+
+    color:white;
+
+}
+
+/* ===========================
+   Responsive
+=========================== */
+
+@media(max-width:768px){
+
+    .document-card{
+
+        padding:22px;
+
+    }
+
+    .document-title{
+
+        font-size:18px;
+
+    }
+
+    .document-icon{
+
+        font-size:50px;
+
+    }
+
+    .action-buttons{
+
+        flex-direction:column;
+
+    }
+
+    .action-buttons .btn{
+
+        width:100%;
+
+    }
+
+    .page-title{
+
+        font-size:30px;
+
+    }
+
+}

@@ -5,6 +5,7 @@ import com.devdocs.backend.service.DocumentService;
 import org.apache.pdfbox.Loader;
 import org.apache.pdfbox.pdmodel.PDDocument;
 import org.apache.pdfbox.text.PDFTextStripper;
+import org.springframework.beans.factory.annotation.Value;
 import org.springframework.core.io.FileSystemResource;
 import org.springframework.core.io.Resource;
 import org.springframework.http.HttpHeaders;
@@ -15,12 +16,17 @@ import org.springframework.web.multipart.MultipartFile;
 
 import java.io.File;
 import java.io.IOException;
+import java.nio.file.Path;
+import java.nio.file.Paths;
 import java.util.List;
 
 @RestController
 @RequestMapping("/api/documents")
 @CrossOrigin(origins = "*")
 public class DocumentController {
+
+    @Value("${file.upload-dir:uploads}")
+    private String uploadDir;
 
     private final DocumentService documentService;
 
@@ -32,17 +38,16 @@ public class DocumentController {
     @PostMapping("/upload")
     public String uploadFile(@RequestParam("file") MultipartFile file) throws IOException {
 
-        String uploadDir = "C:/projects/DevDocsAI/uploads/";
-
         File folder = new File(uploadDir);
 
         if (!folder.exists()) {
             folder.mkdirs();
         }
 
-        String filePath = uploadDir + file.getOriginalFilename();
+        File destinationFile = new File(folder, file.getOriginalFilename());
+        String filePath = destinationFile.getAbsolutePath();
 
-        file.transferTo(new File(filePath));
+        file.transferTo(destinationFile);
 
         PDDocument pdfDocument = Loader.loadPDF(new File(filePath));
 

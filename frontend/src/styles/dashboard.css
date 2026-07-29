@@ -1,0 +1,249 @@
+body{
+    background:#0F172A;
+    color:#F8FAFC;
+    font-family:'Inter',Arial,sans-serif;
+}
+
+.dashboard-title{
+    font-size:36px;
+    font-weight:700;
+    margin-bottom:35px;
+    letter-spacing:.5px;
+}
+
+.dashboard-subtitle{
+    color:#94A3B8;
+    margin-top:-15px;
+    margin-bottom:35px;
+    font-size:16px;
+}
+
+/* ========================= */
+/* Statistic Cards */
+/* ========================= */
+
+.stat-card{
+
+    background:linear-gradient(145deg,#1E293B,#162033);
+
+    border-radius:20px;
+
+    padding:30px;
+
+    color:white;
+
+    transition:all .35s ease;
+
+    box-shadow:0 10px 30px rgba(0,0,0,.25);
+
+    border:1px solid rgba(255,255,255,.05);
+
+    position:relative;
+
+    overflow:hidden;
+
+}
+
+.stat-card::before{
+
+    content:"";
+
+    position:absolute;
+
+    width:180px;
+
+    height:180px;
+
+    background:rgba(37,99,235,.15);
+
+    border-radius:50%;
+
+    top:-80px;
+
+    right:-80px;
+
+}
+
+.stat-card:hover{
+
+    transform:translateY(-10px);
+
+    box-shadow:0 20px 45px rgba(37,99,235,.35);
+
+}
+
+.stat-icon{
+
+    font-size:45px;
+
+    margin-bottom:18px;
+
+}
+
+.stat-title{
+
+    color:#CBD5E1;
+
+    font-size:15px;
+
+}
+
+.stat-number{
+
+    font-size:42px;
+
+    font-weight:700;
+
+    margin-top:8px;
+
+}
+
+/* ========================= */
+/* Quick Action Cards */
+/* ========================= */
+
+.menu-card{
+
+    background:linear-gradient(145deg,#1E293B,#162033);
+
+    color:white;
+
+    border-radius:20px;
+
+    padding:35px;
+
+    transition:all .35s ease;
+
+    cursor:pointer;
+
+    text-align:center;
+
+    border:1px solid rgba(255,255,255,.05);
+
+    min-height:220px;
+
+    display:flex;
+
+    flex-direction:column;
+
+    justify-content:center;
+
+    align-items:center;
+
+    box-shadow:0 10px 25px rgba(0,0,0,.25);
+
+}
+
+.menu-card:hover{
+
+    transform:translateY(-8px);
+
+    background:linear-gradient(145deg,#2563EB,#1D4ED8);
+
+    box-shadow:0 18px 40px rgba(37,99,235,.45);
+
+}
+
+.menu-card h1{
+
+    font-size:60px;
+
+    margin-bottom:20px;
+
+}
+
+.menu-card h5{
+
+    font-size:20px;
+
+    font-weight:600;
+
+}
+
+.menu-card p{
+
+    color:#E2E8F0;
+
+    font-size:14px;
+
+    margin-top:10px;
+
+}
+
+/* ========================= */
+/* Recent Documents */
+/* ========================= */
+
+.recent-card{
+
+    background:#1E293B;
+
+    border-radius:18px;
+
+    padding:20px;
+
+    color:white;
+
+    margin-bottom:18px;
+
+    transition:.3s;
+
+    border:1px solid rgba(255,255,255,.05);
+
+}
+
+.recent-card:hover{
+
+    background:#273449;
+
+    transform:translateX(6px);
+
+}
+
+.recent-title{
+
+    font-weight:600;
+
+    font-size:18px;
+
+}
+
+.recent-date{
+
+    color:#94A3B8;
+
+    font-size:14px;
+
+}
+
+/* ========================= */
+/* Responsive */
+/* ========================= */
+
+@media(max-width:768px){
+
+    .dashboard-title{
+
+        font-size:28px;
+
+    }
+
+    .stat-card{
+
+        padding:20px;
+
+    }
+
+    .menu-card{
+
+        min-height:180px;
+
+    }
+
+    .menu-card h1{
+
+        font-size:45px;
+
+    }
+
+}

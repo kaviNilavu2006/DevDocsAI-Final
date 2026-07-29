@@ -1,0 +1,144 @@
+.flashcards-page{
+    padding:30px;
+    display:flex;
+    flex-direction:column;
+    align-items:center;
+
+}
+
+.flashcards-title{
+
+    color:white;
+    font-size:34px;
+    font-weight:700;
+    margin-bottom:8px;
+
+}
+
+.flashcards-subtitle{
+
+    color:#94A3B8;
+    margin-bottom:25px;
+
+}
+
+.card-counter{
+
+    background:#2563EB;
+    color:white;
+    padding:8px 18px;
+    border-radius:30px;
+    margin-bottom:30px;
+    font-weight:600;
+
+}
+
+.flashcard-box{
+
+    width:100%;
+    max-width:800px;
+    min-height:320px;
+
+    background:#1E293B;
+
+    border-radius:22px;
+
+    display:flex;
+
+    justify-content:center;
+
+    align-items:center;
+
+    text-align:center;
+
+    padding:40px;
+
+    box-shadow:0 15px 40px rgba(0,0,0,.25);
+
+    border:1px solid rgba(255,255,255,.05);
+
+    transition:.35s;
+
+}
+
+.flashcard-box:hover{
+
+    transform:translateY(-8px);
+
+    box-shadow:0 20px 45px rgba(37,99,235,.35);
+
+}
+
+.flashcard-box h3{
+
+    color:white;
+
+    line-height:1.8;
+
+    font-size:28px;
+
+    font-weight:600;
+
+}
+
+.flash-buttons{
+
+    margin-top:35px;
+
+    display:flex;
+
+    gap:20px;
+
+}
+
+.flash-buttons .btn{
+
+    padding:12px 28px;
+
+    border-radius:12px;
+
+    font-weight:600;
+
+}
+
+.loading-card{
+
+    padding:100px;
+
+    text-align:center;
+
+    color:white;
+
+}
+
+@media(max-width:768px){
+
+    .flashcard-box{
+
+        min-height:260px;
+
+        padding:25px;
+
+    }
+
+    .flashcard-box h3{
+
+        font-size:22px;
+
+    }
+
+    .flash-buttons{
+
+        flex-direction:column;
+
+        width:100%;
+
+    }
+
+    .flash-buttons .btn{
+
+        width:100%;
+
+    }
+
+}

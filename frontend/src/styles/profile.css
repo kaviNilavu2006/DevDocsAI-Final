@@ -1,0 +1,178 @@
+.profile-page{
+    padding:30px;
+    color:white;
+}
+
+/* Header */
+
+.profile-header{
+
+    display:flex;
+    align-items:center;
+    gap:25px;
+
+    background:#1E293B;
+
+    border-radius:20px;
+
+    padding:30px;
+
+    box-shadow:0 15px 35px rgba(0,0,0,.25);
+
+}
+
+.profile-avatar{
+
+    width:120px;
+
+    height:120px;
+
+    border-radius:50%;
+
+    background:linear-gradient(135deg,#2563EB,#38BDF8);
+
+    display:flex;
+
+    justify-content:center;
+
+    align-items:center;
+
+    font-size:48px;
+
+    font-weight:bold;
+
+    color:white;
+
+}
+
+.profile-header h2{
+
+    margin:0;
+
+    font-weight:700;
+
+}
+
+.profile-header p{
+
+    margin:5px 0;
+
+    color:#CBD5E1;
+
+}
+
+.role-badge{
+
+    background:#2563EB;
+
+    color:white;
+
+    padding:6px 15px;
+
+    border-radius:30px;
+
+    font-size:13px;
+
+}
+
+/* Cards */
+
+.profile-card{
+
+    background:#1E293B;
+
+    border-radius:18px;
+
+    padding:30px;
+
+    text-align:center;
+
+    transition:.3s;
+
+    box-shadow:0 10px 25px rgba(0,0,0,.20);
+
+}
+
+.profile-card:hover{
+
+    transform:translateY(-8px);
+
+    box-shadow:0 15px 40px rgba(37,99,235,.35);
+
+}
+
+.profile-card h1{
+
+    font-size:50px;
+
+}
+
+.profile-card h3{
+
+    font-size:38px;
+
+    margin-top:15px;
+
+    font-weight:700;
+
+}
+
+.profile-card p{
+
+    color:#94A3B8;
+
+}
+
+/* Information */
+
+.profile-info{
+
+    margin-top:40px;
+
+    background:#1E293B;
+
+    border-radius:20px;
+
+    padding:30px;
+
+    box-shadow:0 10px 25px rgba(0,0,0,.20);
+
+}
+
+.profile-info h3{
+
+    font-weight:700;
+
+    margin-bottom:20px;
+
+}
+
+.info-row{
+
+    display:flex;
+
+    justify-content:space-between;
+
+    padding:15px 0;
+
+    border-bottom:1px solid rgba(255,255,255,.08);
+
+}
+
+.info-row:last-child{
+
+    border-bottom:none;
+
+}
+
+.info-row span{
+
+    color:#94A3B8;
+
+}
+
+.info-row strong{
+
+    color:white;
+
+}

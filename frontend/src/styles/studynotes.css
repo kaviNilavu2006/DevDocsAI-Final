@@ -1,0 +1,116 @@
+.notes-page{
+    padding:30px;
+}
+
+.notes-header{
+
+    display:flex;
+    justify-content:space-between;
+    align-items:center;
+    margin-bottom:30px;
+
+}
+
+.notes-title{
+
+    color:white;
+    font-size:34px;
+    font-weight:700;
+
+}
+
+.notes-subtitle{
+
+    color:#94A3B8;
+
+}
+
+.notes-card{
+
+    background:#1E293B;
+    border-radius:20px;
+    padding:35px;
+    color:white;
+
+    box-shadow:0 15px 40px rgba(0,0,0,.25);
+
+}
+
+.notes-content{
+
+    line-height:2;
+    font-size:17px;
+    white-space:pre-wrap;
+
+}
+
+.notes-buttons{
+
+    display:flex;
+    justify-content:flex-end;
+    gap:15px;
+    margin-top:30px;
+
+}
+
+.notes-buttons button{
+
+    border:none;
+    border-radius:12px;
+    padding:12px 25px;
+    transition:.3s;
+    font-weight:600;
+
+}
+
+.download-btn{
+
+    background:#DC2626;
+    color:white;
+
+}
+
+.download-btn:hover{
+
+    background:#B91C1C;
+
+}
+
+.copy-btn{
+
+    background:#2563EB;
+    color:white;
+
+}
+
+.copy-btn:hover{
+
+    background:#1D4ED8;
+
+}
+
+.loading-card{
+
+    background:#1E293B;
+    border-radius:20px;
+    padding:80px;
+    color:white;
+    text-align:center;
+
+}
+
+@media(max-width:768px){
+
+    .notes-buttons{
+
+        flex-direction:column;
+
+    }
+
+    .notes-buttons button{
+
+        width:100%;
+
+    }
+
+}
