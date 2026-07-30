@@ -26,15 +26,7 @@ function Upload() {
 
         try {
 
-            await api.post("/documents/upload", formData, {
-
-                headers: {
-
-                    "Content-Type": "multipart/form-data"
-
-                }
-
-            });
+            await api.post("/documents/upload", formData);
 
             alert("✅ PDF Uploaded Successfully");
 
@@ -46,7 +38,9 @@ function Upload() {
 
             console.error(error);
 
-            alert("Upload Failed");
+            const errorMsg = error.response?.data?.message || error.response?.data || error.message || "Upload Failed";
+
+            alert(`Upload Failed: ${errorMsg}`);
 
         }
 
