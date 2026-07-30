@@ -26,9 +26,11 @@ function Upload() {
 
         try {
 
-            await api.post("/documents/upload", formData);
+            const response = await api.post("/documents/upload", formData);
 
-            alert("✅ PDF Uploaded Successfully");
+            const msg = response.data?.message || "✅ PDF Uploaded Successfully";
+
+            alert(msg);
 
             setFile(null);
 
@@ -36,9 +38,29 @@ function Upload() {
 
         catch (error) {
 
-            console.error(error);
+            console.error("Upload Error:", error);
 
-            const errorMsg = error.response?.data?.message || error.response?.data || error.message || "Upload Failed";
+            let errorMsg = "Upload Failed";
+
+            if (error.response?.data) {
+
+                const data = error.response.data;
+
+                if (typeof data === "string") {
+
+                    errorMsg = data;
+
+                } else if (typeof data === "object") {
+
+                    errorMsg = data.message || data.error || JSON.stringify(data);
+
+                }
+
+            } else if (error.message) {
+
+                errorMsg = error.message;
+
+            }
 
             alert(`Upload Failed: ${errorMsg}`);
 

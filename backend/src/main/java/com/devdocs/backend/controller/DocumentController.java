@@ -9,16 +9,17 @@ import org.springframework.beans.factory.annotation.Value;
 import org.springframework.core.io.FileSystemResource;
 import org.springframework.core.io.Resource;
 import org.springframework.http.HttpHeaders;
+import org.springframework.http.HttpStatus;
 import org.springframework.http.MediaType;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 import org.springframework.web.multipart.MultipartFile;
 
 import java.io.File;
-import java.io.IOException;
-import java.nio.file.Path;
-import java.nio.file.Paths;
+import java.nio.file.Files;
+import java.nio.file.StandardCopyOption;
 import java.util.List;
+import java.util.Map;
 
 @RestController
 @RequestMapping("/api/documents")
@@ -36,38 +37,59 @@ public class DocumentController {
 
     // Upload PDF
     @PostMapping("/upload")
-    public String uploadFile(@RequestParam("file") MultipartFile file) throws IOException {
+    public ResponseEntity<?> uploadFile(@RequestParam("file") MultipartFile file) {
 
-        File folder = new File(uploadDir);
-
-        if (!folder.exists()) {
-            folder.mkdirs();
+        if (file == null || file.isEmpty()) {
+            return ResponseEntity.badRequest().body(Map.of("message", "Selected PDF file is empty!"));
         }
 
-        File destinationFile = new File(folder, file.getOriginalFilename());
-        String filePath = destinationFile.getAbsolutePath();
+        try {
+            File folder = new File(uploadDir).getAbsoluteFile();
 
-        file.transferTo(destinationFile);
+            if (!folder.exists()) {
+                folder.mkdirs();
+            }
 
-        PDDocument pdfDocument = Loader.loadPDF(new File(filePath));
+            String originalFilename = file.getOriginalFilename();
+            if (originalFilename == null || originalFilename.isBlank()) {
+                originalFilename = "uploaded_" + System.currentTimeMillis() + ".pdf";
+            }
 
-        PDFTextStripper stripper = new PDFTextStripper();
+            File destinationFile = new File(folder, originalFilename).getAbsoluteFile();
 
-        String extractedText = stripper.getText(pdfDocument);
+            Files.copy(
+                file.getInputStream(),
+                destinationFile.toPath(),
+                StandardCopyOption.REPLACE_EXISTING
+            );
 
-        pdfDocument.close();
+            String extractedText = "";
 
-        Document document = new Document();
+            try (PDDocument pdfDocument = Loader.loadPDF(destinationFile)) {
+                PDFTextStripper stripper = new PDFTextStripper();
+                extractedText = stripper.getText(pdfDocument);
+            } catch (Exception e) {
+                System.err.println("Text extraction warning: " + e.getMessage());
+                extractedText = "Text extraction unavailable or PDF is scanned/encrypted.";
+            }
 
-        document.setFileName(file.getOriginalFilename());
-        document.setFileType(file.getContentType());
-        document.setFileSize(file.getSize());
-        document.setFilePath(filePath);
-        document.setExtractedText(extractedText);
+            Document document = new Document();
 
-        documentService.saveDocument(document);
+            document.setFileName(originalFilename);
+            document.setFileType(file.getContentType() != null ? file.getContentType() : "application/pdf");
+            document.setFileSize(file.getSize());
+            document.setFilePath(destinationFile.getAbsolutePath());
+            document.setExtractedText(extractedText);
 
-        return "File uploaded successfully!";
+            documentService.saveDocument(document);
+
+            return ResponseEntity.ok(Map.of("message", "PDF Uploaded Successfully!", "id", document.getId()));
+
+        } catch (Exception e) {
+            e.printStackTrace();
+            return ResponseEntity.status(HttpStatus.INTERNAL_SERVER_ERROR)
+                    .body(Map.of("message", "Upload failed: " + e.getMessage()));
+        }
     }
 
     // Get all documents
